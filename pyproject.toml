@@ -1,0 +1,29 @@
+[project]
+name = "app1"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Syed-Javith",email = "syedjavith14@gmail.com"}
+]
+readme = "README.md"
+python = ">=3.12,<=3.13"
+dependencies = [
+    "crewai (>=0.201.1,<0.202.0)",
+    "beautifulsoup4 (>=4.14.2,<5.0.0)",
+    "langchain-tavily (>=0.2.11,<0.3.0)",
+    "crewai-tools (>=0.75.0,<0.76.0)",
+    "requests (>=2.32.5,<3.0.0)",
+    "langchain-openai (>=0.3.34,<0.4.0)",
+    "llama-cpp-python (>=0.3.16,<0.4.0)",
+    "langchain-community (>=0.3.30,<0.4.0)"
+]
+
+[tool.poetry]
+packages = [{include = "app1", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.12,<=3.13"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
