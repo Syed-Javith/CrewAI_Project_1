@@ -6,8 +6,7 @@ from crewai import Agent, Task, Crew
 from langchain.tools import tool
 from langchain_openai import ChatOpenAI
 from langchain_tavily import TavilySearch
-from langchain.llms import LlamaCpp
-
+from langchain_groq import ChatGroq
 from ai_tools import ProcessSearchTool, TavilySearchTool
 
 load_dotenv()
@@ -15,26 +14,8 @@ load_dotenv()
 print("OPENAI_API_KEY:", os.getenv("OPENAI_API_KEY"))
 
 # llm = ChatOpenAI(model="gpt-4o-mini")
-llm = ChatOpenAI(model="gpt-3.5-turbo")
-
-
-# llm_local = LlamaCpp(
-#     model_path="/opt/models/models.gguf",
-#     n_ctx=2048,
-#     temperature=0.7
-# )
-
-# class LocalLLMWrapper:
-#     def __init__(self, llm):
-#         self.llm = llm
-
-#     def invoke(self, prompt: str, **kwargs):
-#         return self.llm.invoke(prompt)
-
-#     def __call__(self, prompt: str):
-#         return self.llm(prompt)
-
-# llm = LocalLLMWrapper(llm_local)
+# llm = ChatOpenAI(model="gpt-3.5-turbo")
+llm = ChatGroq(model="groq/llama-3.3-70b-versatile")
 
 tools = [TavilySearchTool(), ProcessSearchTool()]
 
